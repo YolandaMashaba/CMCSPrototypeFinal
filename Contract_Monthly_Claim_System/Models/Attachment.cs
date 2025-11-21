@@ -13,25 +13,24 @@ namespace Contract_Monthly_Claim_System.Models
         public int ClaimId { get; set; }
 
         [ForeignKey("ClaimId")]
-        public Claim Claim { get; set; }
+        public Claim? Claim { get; set; }
 
         [Required]
         [StringLength(255)]
-        public string FileName { get; set; }
+        public string FileName { get; set; } = string.Empty;
 
         [Required]
         [StringLength(50)]
-        public string FileType { get; set; }
+        public string FileType { get; set; } = string.Empty;
 
         public long FileSize { get; set; }
 
         [Required]
-        public string FilePath { get; set; } // Path to saved file
+        public string FilePath { get; set; } = string.Empty;
 
         public DateTime UploadedAt { get; set; } = DateTime.Now;
 
         [StringLength(100)]
-        public string UploadedBy { get; set; }
-
+        public string? UploadedBy { get; set; }
     }
 }
